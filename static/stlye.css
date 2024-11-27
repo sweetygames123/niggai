@@ -1,0 +1,203 @@
+/* Genel gövde stili */
+body {
+  background-color: black; /* CMD arka plan rengi */
+  cursor: url('/static/cursors/weedbro2.cur'), auto; /* Özel imleç */
+  color: #00ff00; /* Tipik CMD yeşil yazı rengi */
+  font-family: "Courier New", Consolas, monospace; /* CMD yazı tipleri */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+/* Terminal stili */
+.terminal {
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 14px; /* CMD tarzı font boyutu */
+  line-height: 1.5; /* Satır arası boşluk */
+  color: #00ff00; /* CMD yeşil yazı rengi */
+  background-color: black; /* CMD arka plan rengi */
+  border: 2px solid #00ff00; /* CMD tarzı çerçeve */
+  padding: 10px;
+  overflow-y: auto;
+  width: 80%;
+  max-width: 800px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat input alanı */
+.input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#user-input {
+  background-color: black; /* CMD tarzı arka plan */
+  color: #00ff00; /* CMD tarzı yazı rengi */
+  border: none;
+  outline: none;
+  font-family: "Courier New", Consolas, monospace; /* CMD yazı tipi */
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/* Kopyalama alanı */
+.copy-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: #00ffaa;
+}
+
+.copy-section span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+#copy-button {
+  background-color: #00ff00;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#copy-button:hover {
+  background-color: #00cc00;
+}
+
+/* Harici butonlar (X ve Telegram) */
+.external-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #00ffaa;
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #00ccaa;
+}
+
+/* Destroy butonu */
+.destroy-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.destroy-button:hover {
+  background-color: darkred;
+}
+
+/* Yanıp sönen "nigga writing..." efekti */
+.blinking {
+  animation: blink 1s step-start infinite; /* Yanıp sönme animasyonu */
+  color: #00ffaa;
+  margin-top: 10px;
+  font-family: "Courier New", monospace;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Mobil uyumluluk için */
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  .copy-section span {
+    font-size: 14px;
+  }
+
+  #copy-button {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  .external-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .button {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .terminal {
+    width: 95%;
+    height: 60%;
+  }
+
+  .destroy-button {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+
+  .typing-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .copy-section span {
+    font-size: 12px;
+  }
+
+  #copy-button {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .terminal {
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .destroy-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .typing-text {
+    font-size: 16px;
+  }
+}
